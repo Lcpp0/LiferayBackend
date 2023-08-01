@@ -1,0 +1,10 @@
+Bundle-Name: the-simpsons-sb-api
+Bundle-SymbolicName: com.the.simpsons.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.the.simpsons.sb.exception,\
+	com.the.simpsons.sb.model,\
+	com.the.simpsons.sb.service,\
+	com.the.simpsons.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../the-simpsons-sb-service/service.xml

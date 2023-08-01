@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:the-simpsons-sb:the-simpsons-sb-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../the-simpsons-sb-api/src/main/java"
+}
+
+group = "com.the.simpsons.sb"

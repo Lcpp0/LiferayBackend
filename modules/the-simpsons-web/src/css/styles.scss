@@ -1,0 +1,156 @@
+.pre {
+	font-family: monospace;
+	white-space: pre;
+}
+
+.tag {
+	font-weight: bold;
+	margin-right: 1em;
+}
+
+.value {
+	font-family: monospace;
+}
+
+.ghibliButton{
+	background: #919191;
+    color: #ffecb5;
+}
+
+.simpsonsButtonMain{
+	background: #ffd521;
+    color: #107dc0;
+}
+
+.filmContainer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+  }
+
+.cardWidth{
+	width: 200px;
+}
+
+.simpsonsCard{
+	background-color: #ffd521;
+}
+
+.simpsonsButton{
+	color: black;
+    font-weight: bold;
+    background: #f65132;
+}
+
+
+/* Inicio Estilos de add */
+.container-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+  }
+
+  .container-form {
+	max-width: 300px;
+	background-color: #f1f7fe;
+	border-radius: 15px;
+	overflow: hidden;
+  }
+
+  .contact-form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 32px 24px 24px;
+	gap: 16px;
+	text-align: center;
+  }
+
+  .contact-form .head {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+  }
+
+  .contact-form .head .span-contact {
+	font-size: 1.6rem;
+	font-weight: bolder;
+	color: black;
+  }
+
+  .contact-form .head p {
+	font-size: 1.1rem;
+	color: #7c6666;
+  }
+
+  .contact-form .inputs {
+	overflow: hidden;
+	background-color: #fff;
+	width: 100%;
+	margin: 1rem 0.5rem;
+	border-radius: 8px;
+	border-bottom: none;
+	outline: 0;
+  }
+
+  .contact-form .inputs .input-contact {
+	border: none;
+	outline: none;
+	padding: 8px 15px;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+	font-weight: 200;
+  }
+
+  .contact-form .inputs .input-contact-textarea {
+	border: none;
+	outline: none;
+	padding: 8px 15px;
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+	font-weight: 200;
+  }
+
+  .contact-form .button-contact {
+	background-color: #4287ef;
+	color: white;
+	width: 100%;
+	height: 40px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 0;
+	overflow: hidden;
+	border-radius: 25px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+  }
+
+  .contact-form .button-contact:hover {
+	background-color: #005ce6;
+  }
+
+  .form-footer {
+	background-color: #e0ecfb;
+	padding: 16px;
+	font-size: 1rem;
+	text-align: center;
+  }
+
+  .form-footer a {
+	font-weight: bolder;
+	color: #0066ff;
+	transition: all 3s ease-in-out;
+  }
+
+  .form-footer a:hover {
+	color: #005ce6;
+  }
+
+/* Fin Estilos de add */
+

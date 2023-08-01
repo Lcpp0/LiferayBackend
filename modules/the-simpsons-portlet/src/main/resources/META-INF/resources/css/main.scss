@@ -1,0 +1,33 @@
+.the-simpsons-portlet {
+}
+
+.ghibliButton{
+	background: #919191;
+    color: #ffecb5;
+}
+
+.simpsonsButtonMain{
+	background: #ffd521;
+    color: #107dc0;
+}
+
+.filmContainer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+  }
+
+.cardWidth{
+	width: 200px;
+}
+
+.simpsonsCard{
+	background-color: #ffd521;
+}
+
+.simpsonsButton{
+	color: black;
+    font-weight: bold;
+    background: #f65132;
+}
