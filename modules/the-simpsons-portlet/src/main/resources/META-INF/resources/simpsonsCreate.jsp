@@ -3,11 +3,9 @@
 <liferay-portlet:actionURL var="createCharacterURL1" name="/simpsonsCreate">
 </liferay-portlet:actionURL>
 
-<a href="<%= createCharacterURL1 %>">Create Character Action </a>
+<h2>Create Character</h2>
 
-<h2 class="simpsonsButton">Create Character</h2>
-
-<div>
+<div class="simpsonsCard">
     <label>Name:</label>
     <input type="text" id="name" name="<portlet:namespace/>name" required /><br />
 
@@ -20,7 +18,7 @@
     <label>Genre:</label>
     <input type="text" id="genre" name="<portlet:namespace/>genre" required /><br />
 
-    <button onclick="createCharacter()">Create Character</button>
+    <button onclick="createCharacter()" class="btn simpsonsButton">Create Character</button>
 </div>
 
 <script>

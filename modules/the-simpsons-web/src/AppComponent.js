@@ -18,6 +18,7 @@ function AppComponent() {
   
 	return (
 	  <div>
+	  <img src="/o/the-simpsons-web-1.0.0/img/Karl.png" alt="My Image" />
 		<h1>App Component</h1>
 		<button className="ghibliButton" onClick={handleStudioGhibliClick}>Studio Ghibli</button>
 		<button className="simpsonsButtonMain" onClick={handleTheSimpsonsClick}>The Simpsons</button>

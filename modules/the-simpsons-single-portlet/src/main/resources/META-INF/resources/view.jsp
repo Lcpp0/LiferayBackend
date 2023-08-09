@@ -1,25 +1,19 @@
 <%@ include file="/init.jsp" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="com.the.simpsons.sb.model.Character" %>
 
-
-<liferay-portlet:renderURL var="editCharacterURL">
-    <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsEdit"/>
-</liferay-portlet:renderURL>
-
-
-<liferay-portlet:actionURL var="deleteCharacterURL" name="/simpsonsDeleteAction">
+<liferay-portlet:actionURL var="deleteCharacterURL" name="deleteCharacter">
 </liferay-portlet:actionURL>
 
 <%
 List<Character> characters = (List<Character>) request.getAttribute("characters");
 %>
 
+<liferay-ui:success key="success" message="Personaje eliminado exitosamente" />
+<liferay-ui:error key="error" message="Lo sentimos, el personaje no pudo ser eliminado" />
+
 <div class="filmContainer mt-3">
     <%-- Use JSTL to iterate through the characters list and display them --%>
+    <input type="hidden" id="characterId_${character.characterId}" name="<portlet:namespace/>characterId"/>
      <c:forEach var="character" items="${characters}">
-     <input type="hidden" id="characterId_${character.characterId}" name="<portlet:namespace/>characterId"/>
        <div class="card cardWidth simpsonsCard" key={character.characterId}>
            <img
                alt="${character.name} poster"
@@ -30,10 +24,9 @@ List<Character> characters = (List<Character>) request.getAttribute("characters"
                <h4 class="card-title">${character.name}</h4>
                <p class="card-text">${character.description}</p>
                <div>
-                  <a href="<%= editCharacterURL.toString() %>&characterId=${character.characterId}" class=" btn simpsonsButton">Edit</a>
                </div>
                <div>
-                    <button class="btn simpsonsButton mt-1" onclick='deleteCharacter(${character.characterId})'>Delete Character</button>
+                    <button class="btn simpsonsButton" onclick='deleteCharacter(${character.characterId})'>Delete Character</button>
                </div>
            </div>
        </div>
@@ -47,7 +40,7 @@ List<Character> characters = (List<Character>) request.getAttribute("characters"
     characterIdInput.value = characterId;
     jQuery.ajax({
         type: 'GET',
-        url : '${deleteCharacterURL}',
+        url : '${editCharacterURL}',
         cache:false,
         async:true,
         error: function(){

@@ -1,0 +1,4 @@
+Bundle-Name: the-simpsons-single-portlet
+Bundle-SymbolicName: com.the.simpsons.single.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.the.simpsons.single.portlet.constants
