@@ -22,13 +22,13 @@
 </div>
 
 <script>
-    function createCharacter() {
-     var name = document.getElementById("name").value;
-        var description = document.getElementById("description").value;
-        var image = document.getElementById("image").value;
-        var genre = document.getElementById("genre").value;
+function createCharacter() {
+    var name = document.getElementById("name").value;
+    var description = document.getElementById("description").value;
+    var image = document.getElementById("image").value;
+    var genre = document.getElementById("genre").value;
 
-   jQuery.ajax({
+    jQuery.ajax({
              type: 'GET',
              url : '${createCharacterURL1}',
              cache:false,
@@ -38,15 +38,14 @@
                     },
             dataType: "text",
             data: {
-             <portlet:namespace/>name: name,
-             <portlet:namespace/>description: description,
-             <portlet:namespace/>image: image,
-             <portlet:namespace/>genre: genre
+                 <portlet:namespace/>name: name,
+                 <portlet:namespace/>description: description,
+                 <portlet:namespace/>image: image,
+                 <portlet:namespace/>genre: genre
             },
-
              success: function(status) {
-    console.log("status ",status);
+                console.log("status ",status);
              }
         });
- }
+}
 </script>

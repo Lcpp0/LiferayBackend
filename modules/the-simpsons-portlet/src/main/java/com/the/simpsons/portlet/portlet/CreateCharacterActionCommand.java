@@ -30,34 +30,26 @@ public class CreateCharacterActionCommand implements MVCActionCommand {
 
     @Override
     public boolean processAction(ActionRequest actionRequest, ActionResponse actionResponse) throws PortletException {
-        log.info("msg");
+        //Get form parameters
         String name = ParamUtil.getString(actionRequest, "name");
         String description = ParamUtil.getString(actionRequest, "description");
         String image = ParamUtil.getString(actionRequest, "image");
         String genre = ParamUtil.getString(actionRequest, "genre");
 
-        log.info("name " + name);
-        log.info("description " + description);
-        log.info("image " + image);
-        log.info("genre " + genre);
 
-        // Create a ServiceContext
+        // Create a ServiceContext, required for createCharacter method
         ServiceContext serviceContext = new ServiceContext();
         ThemeDisplay themeDisplay = (ThemeDisplay) actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
         serviceContext.setScopeGroupId(themeDisplay.getScopeGroupId());
         serviceContext.setUserId(themeDisplay.getUserId());
 
-
-        log.info("serviceContext " + serviceContext);
         try {
-            log.info("Try ");
             CharacterLocalServiceUtil.createCharacter(name, description, image, genre, serviceContext);
-            return true; // Return true on successful processing
+            return true;
         } catch (PortalException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return false; // Return false on failure
+            log.error("El personaje no ha podido ser creado");
+            log.error(e.getMessage());
+            return false;
         }
-
     }
 }

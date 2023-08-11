@@ -8,4 +8,6 @@ public class TheSimpsonsPortletKeys {
 	public static final String THESIMPSONS =
 		"com_the_simpsons_portlet_TheSimpsonsPortlet";
 
+	public static final String PREFERENCE_TITLE = "title";
+
 }

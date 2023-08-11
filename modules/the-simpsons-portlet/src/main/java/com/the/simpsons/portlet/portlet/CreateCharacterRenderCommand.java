@@ -12,7 +12,7 @@ import javax.portlet.RenderResponse;
         immediate = true,
         property = {
                 "javax.portlet.name=" + TheSimpsonsPortletKeys.THESIMPSONS,
-                "mvc.command.name=/simpsonsCreate" // Change this to the desired URL mapping
+                "mvc.command.name=/simpsonsCreate"
         },
         service = MVCRenderCommand.class
 )
@@ -20,11 +20,7 @@ public class CreateCharacterRenderCommand implements MVCRenderCommand {
 
     @Override
     public String render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException {
-
-
         // Return the path of the JSP to render
         return "/simpsonsCreate.jsp";
-
     }
-
 }

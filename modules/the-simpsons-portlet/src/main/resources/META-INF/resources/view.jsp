@@ -1,15 +1,15 @@
 <%@ include file="/init.jsp" %>
 
-    <liferay-portlet:renderURL var="theSimpsonsListURL">
-     <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsList"/>
-    </liferay-portlet:renderURL>
+<h1><%=title%></h1>
 
+<liferay-portlet:renderURL var="theSimpsonsListURL">
+    <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsList"/>
+</liferay-portlet:renderURL>
 
-    <a href="<%= theSimpsonsListURL %>" class="btn simpsonsButtonMain">List The Simpsons</a>
+<a href="<%= theSimpsonsListURL %>" class="btn simpsonsButtonMain">List The Simpsons</a>
 
+<liferay-portlet:renderURL var="createCharacterURL">
+    <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsCreate"/>
+</liferay-portlet:renderURL>
 
-    <liferay-portlet:renderURL var="createCharacterURL">
-     <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsCreate"/>
-    </liferay-portlet:renderURL>
-
-    <a href="<%= createCharacterURL %>" class="btn simpsonsButtonMain">Create Character Command </a>
+<a href="<%= createCharacterURL %>" class="btn simpsonsButtonMain">Create Character Command </a>

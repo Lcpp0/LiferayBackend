@@ -4,10 +4,7 @@
 long characterId = (long) request.getAttribute("characterId");
 %>
 
-<%= characterId %>
-
 <liferay-portlet:actionURL var="editCharacterURL" name="/simpsonsEditAction">
-    <liferay:param name='characterId' value='${character.characterId}' />
 </liferay-portlet:actionURL>
 
 <%-- Display the character information to be edited --%>
@@ -46,18 +43,15 @@ long characterId = (long) request.getAttribute("characterId");
 </div>
 
 <script>
-    function editCharacter(characterId) {
-    console.log("characterId", characterId);
-
-     var characterIdInput = document.querySelector('#characterId');
-
-     characterIdInput.value = characterId;
-     var name = document.getElementById("name").value;
+function editCharacter(characterId) {
+    var characterIdInput = document.querySelector('#characterId');
+    characterIdInput.value = characterId;
+    var name = document.getElementById("name").value;
     var description = document.getElementById("description").value;
     var image = document.getElementById("image").value;
     var genre = document.getElementById("genre").value;
 
-   jQuery.ajax({
+    jQuery.ajax({
              type: 'GET',
              url : '${editCharacterURL}',
              cache:false,
@@ -67,15 +61,14 @@ long characterId = (long) request.getAttribute("characterId");
                     },
             dataType: "text",
             data: {
-            <portlet:namespace/>characterIdInput: characterIdInput.value,
-             <portlet:namespace/>name: name,
-             <portlet:namespace/>description: description,
-             <portlet:namespace/>image: image,
-             <portlet:namespace/>genre: genre
+                <portlet:namespace/>characterIdInput: characterIdInput.value,
+                <portlet:namespace/>name: name,
+                <portlet:namespace/>description: description,
+                <portlet:namespace/>image: image,
+                <portlet:namespace/>genre: genre
             },
-
              success: function(status) {
-    console.log("status ",status);
+                console.log("status ",status);
              }
         });
  }

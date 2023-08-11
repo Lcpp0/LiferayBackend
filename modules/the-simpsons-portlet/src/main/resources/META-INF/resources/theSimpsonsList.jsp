@@ -8,7 +8,6 @@
     <liferay-portlet:param name="mvcRenderCommandName" value="/simpsonsEdit"/>
 </liferay-portlet:renderURL>
 
-
 <liferay-portlet:actionURL var="deleteCharacterURL" name="/simpsonsDeleteAction">
 </liferay-portlet:actionURL>
 
@@ -41,8 +40,7 @@ List<Character> characters = (List<Character>) request.getAttribute("characters"
 </div>
 
 <script>
-    function deleteCharacter(characterId) {
-    console.log("characterId ", characterId);
+function deleteCharacter(characterId) {
     var characterIdInput = document.querySelector('#characterId_' + characterId);
     characterIdInput.value = characterId;
     jQuery.ajax({
@@ -61,5 +59,5 @@ List<Character> characters = (List<Character>) request.getAttribute("characters"
             console.log("status ",status);
          }
         });
-    }
+}
 </script>

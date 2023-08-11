@@ -29,8 +29,7 @@ public class DeleteCharacterActionCommand implements MVCActionCommand {
     @Override
     public boolean processAction(ActionRequest actionRequest, ActionResponse actionResponse) throws PortletException {
 
-        log.info("info" + ParamUtil.getString(actionRequest, "characterIdInput"));
-
+        //Get characterID
         long characterId = ParamUtil.getLong(actionRequest, "characterIdInput");
         try {
             CharacterLocalServiceUtil.deleteCharacter(characterId);
@@ -38,7 +37,7 @@ public class DeleteCharacterActionCommand implements MVCActionCommand {
             return true;
         } catch (PortalException e) {
             SessionErrors.add(actionRequest, "error");
-            log.error("An error occurred while deleting the character.", e);
+            log.error("Error al eliminar el personaje.", e);
             return false;
         }
     }

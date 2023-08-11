@@ -2,18 +2,13 @@ package com.the.simpsons.portlet.portlet;
 
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.the.simpsons.portlet.constants.TheSimpsonsPortletKeys;
-
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-
-import javax.portlet.Portlet;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
-
+import com.the.simpsons.portlet.constants.TheSimpsonsPortletKeys;
 import org.osgi.service.component.annotations.Component;
 
+import javax.portlet.*;
 import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * @author Laura
@@ -37,7 +32,27 @@ public class TheSimpsonsPortlet extends MVCPortlet {
 	private final Log log = LogFactoryUtil.getLog(TheSimpsonsPortlet.class);
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-		log.info("En el do view");
 		super.doView(renderRequest, renderResponse);
+	}
+
+	@Override
+	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException, IOException {
+		//Get Preferences
+		PortletPreferences prefs = renderRequest.getPreferences();
+
+		//Get Title Preference
+		String title = prefs.getValue(TheSimpsonsPortletKeys.PREFERENCE_TITLE, "");
+
+
+		//Check if the preference is being set
+		Enumeration<String> preferenceNames = prefs.getNames();
+		while (preferenceNames.hasMoreElements()) {
+			String preferenceName = preferenceNames.nextElement();
+			String preferenceValue = prefs.getValue(preferenceName, null);
+			log.info("Preference Name: " + preferenceName + ", Value: " + preferenceValue);
+		}
+
+		renderRequest.setAttribute(TheSimpsonsPortletKeys.PREFERENCE_TITLE, title);
+		super.render(renderRequest, renderResponse);
 	}
 }
